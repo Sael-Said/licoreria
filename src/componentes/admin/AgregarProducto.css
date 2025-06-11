@@ -1,0 +1,97 @@
+/* Estilo base del wrapper para que no lo empuje el sidebar */
+.agregar-producto-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  margin-left: 250px; /* espacio que ocupa el sidebar abierto */
+  transition: margin-left 0.3s ease;
+}
+
+/* El formulario centrado */
+.agregar-producto-container {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Título */
+.agregar-producto-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Formulario */
+.agregar-producto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.agregar-producto-form label {
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.agregar-producto-form input[type="text"],
+.agregar-producto-form input[type="number"],
+.agregar-producto-form input[type="date"],
+.agregar-producto-form select,
+.agregar-producto-form input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.agregar-producto-form button {
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.agregar-producto-form button[type="button"] {
+  background-color: #dc3545;
+}
+
+.agregar-producto-form button:hover {
+  opacity: 0.9;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* <-- para que inicie arriba */
+  overflow-y: auto;
+  padding-top: 10px; /* <-- separa el modal del top */
+  z-index: 1000;
+}
+
+/* Para móviles, que el formulario use todo el ancho */
+@media (max-width: 768px) {
+  .agregar-producto-wrapper {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .agregar-producto-container {
+    margin: 0 auto;
+    padding: 15px;
+  }
+}

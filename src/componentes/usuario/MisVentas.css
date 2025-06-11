@@ -1,0 +1,114 @@
+.mis-ventas-container {
+  padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.mis-ventas-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filtros label {
+  font-weight: bold;
+  color: #444;
+}
+
+.filtros input[type="date"] {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Tabla de ventas */
+.mis-ventas-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.mis-ventas-tabla th,
+.mis-ventas-tabla td {
+  border: 1px solid #000000;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.mis-ventas-tabla th {
+  background-color: #2c7be5;
+  font-weight: bold;
+}
+
+.mis-ventas-tabla ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+/* Exportar botones */
+.botones-exportar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.botones-exportar button,
+.ver-mas-btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  background-color: #2c7be5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.botones-exportar button:hover,
+.ver-mas-btn:hover {
+  background-color: #1a5fb4;
+}
+
+/* Mensaje de error */
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filtros {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mis-ventas-tabla {
+    font-size: 12px;
+  }
+
+  .mis-ventas-tabla th,
+  .mis-ventas-tabla td {
+    padding: 6px;
+  }
+
+  .botones-exportar {
+    flex-direction: column;
+  }
+
+  .ver-mas-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

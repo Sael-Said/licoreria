@@ -1,0 +1,60 @@
+.stock-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  background: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.stock-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+  font-size: 24px;
+}
+
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.stock-table th,
+.stock-table td {
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  text-align: center;
+}
+
+.stock-table th {
+  background-color: #115cac;
+  color: white;
+  font-weight: 600;
+}
+
+.stock-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.stock-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .stock-table th,
+  .stock-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .stock-container {
+    padding: 10px;
+  }
+
+  .stock-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

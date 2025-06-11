@@ -1,0 +1,64 @@
+.cuentas-container {
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cuentas-container h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+.cuentas-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.cuentas-tabla thead {
+  background-color: #1b5e20;
+  color: white;
+}
+
+.cuentas-tabla th,
+.cuentas-tabla td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.cuentas-tabla td {
+  background-color: #fafafa;
+}
+
+.cuentas-tabla tr:hover td {
+  background-color: #f1f1f1;
+}
+
+.cuentas-tabla td:last-child {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .cuentas-container {
+    padding: 10px;
+  }
+
+  .cuentas-tabla {
+    font-size: 14px;
+  }
+
+  .cuentas-tabla th,
+  .cuentas-tabla td {
+    padding: 8px;
+  }
+
+  .cuentas-container h2 {
+    font-size: 22px;
+  }
+}

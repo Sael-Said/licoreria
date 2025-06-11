@@ -1,0 +1,97 @@
+/* Estilos para ListaCompras */
+.reporte-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  margin-left: 250px; /* Espacio fijo para el sidebar */
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease;
+}
+
+.reporte-usuarios-container {
+  padding: 20px;
+  background-color: #f4f6f8;
+  border-radius: 10px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.reporte-usuarios-container h2 {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+.filtros {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filtros input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  min-width: 220px;
+  font-size: 14px;
+}
+
+.reporte-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.reporte-tabla th,
+.reporte-tabla td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 14px;
+}
+
+.reporte-tabla th {
+  background-color: #3498db;
+  color: #fff;
+  font-weight: bold;
+}
+
+.reporte-tabla tr:hover {
+  background-color: #f1f1f1;
+}
+
+.reporte-tabla ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .filtros {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filtros input {
+    width: 100%;
+  }
+
+  .reporte-tabla th,
+  .reporte-tabla td {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .reporte-wrapper {
+    margin-left: 0;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,26 @@
+/* Verde: Registrar Compra */
+.formulario-container .btn-registrar {
+  background-color: #038b03 !important;
+}
+
+.formulario-container .btn-registrar:hover {
+  background-color: #0a4405 !important;
+}
+
+/* Azul: Agregar Producto */
+.formulario-container .btn-agregar {
+  background-color: #2980b9 !important;
+}
+
+.formulario-container .btn-agregar:hover {
+  background-color: #1f6694 !important;
+}
+
+/* Rojo: Quitar Producto */
+.formulario-container .btn-quitar {
+  background-color: #e74c3c !important;
+}
+
+.formulario-container .btn-quitar:hover {
+  background-color: #c0392b !important;
+}

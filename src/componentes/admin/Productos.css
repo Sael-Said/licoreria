@@ -1,0 +1,190 @@
+.productos-container {
+  padding: 20px;
+  max-width: 1000px;  /* antes 1200 */
+  margin-left: 0;      /* pegado a la izquierda */
+  margin-right: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.productos-title {
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+}
+
+.productos-actions {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.productos-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.productos-btn-nuevo {
+  background-color: #3498db;
+  color: white;
+}
+
+.productos-btn-excel {
+  background-color: #27ae60;
+  color: white;
+}
+
+.productos-btn-pdf {
+  background-color: #f39c12;
+  color: white;
+}
+
+.productos-btn:hover {
+  opacity: 0.9;
+}
+
+.productos-table {
+  margin-left: 0;
+}
+
+.productos-table th,
+.productos-table td {
+  padding: 12px 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.productos-table th {
+  background-color: #2eb929;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+}
+
+.productos-table img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.productos-btn-small {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.productos-btn-editar {
+  background-color: #f39c12;
+  color: white;
+}
+
+.productos-btn-eliminar {
+  background-color: #e74c3c;
+  color: white;
+}
+.main-content-inner {
+  margin-left: 0;
+  margin-right: auto;
+  max-width: 1000px;
+}
+
+@media (max-width: 768px) {
+  .productos-table {
+    font-size: 14px;
+  }
+  .productos-btn {
+    padding: 8px 16px;
+  }
+  .productos-title {
+    font-size: 24px;
+  }
+  .productos-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Aplica a todo el contenido principal para que se alinee a la izquierda */
+.main-content-inner,
+.admin-content,
+.productos-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 0;
+  margin-right: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Asegura que la tabla no tenga margen automático al centro */
+.productos-table {
+  margin-left: 0;
+  margin-right: auto;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 👈 alinea el modal arriba */
+  padding-top: 60px;       /* 👈 baja el modal desde arriba */
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background-color: #fff;
+  max-width: 600px;
+  width: 100%;
+  margin-left: 250px; /* Ajusta esto si tu sidebar es de otro ancho */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.productos-btn-activar {
+  background-color: #28a745;
+  color: white;
+}
+
+.productos-btn-desactivar {
+  background-color: #dc3545;
+  color: white;
+}

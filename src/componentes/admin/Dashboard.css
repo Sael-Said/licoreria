@@ -1,0 +1,110 @@
+.dashboard-root {
+  padding: 20px;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Distribuye las tarjetas en varias columnas */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Estilo de cada tarjeta */
+.card {
+  flex: 1 1 300px;
+  min-width: 280px;
+  max-width: 100%;
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  word-wrap: break-word;
+  word-break: normal;
+  white-space: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #fff;
+  white-space: normal;
+}
+
+.card-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  white-space: normal;
+}
+
+/* Colores */
+.card-blue {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.card-purple {
+  background: linear-gradient(to right, #d9a7c7, #fffcdc);
+  color: #333;
+}
+
+.card-yellow {
+  background: linear-gradient(to right, #f7971e, #ffd200);
+  color: #333;
+}
+
+/* Lista de productos con stock bajo */
+.stock-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+/* Gráficos */
+.dashboard-chart {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.card p, .card h2, .card li {
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+
+/* Responsive para móviles */
+@media (max-width: 900px) {
+  .card {
+    flex: 1 1 100%; /* 1 por fila en pantallas pequeñas */
+  }
+
+  .card-grid {
+    justify-content: center;
+  }
+
+  .dashboard-title {
+    font-size: 1.6rem;
+  }
+}

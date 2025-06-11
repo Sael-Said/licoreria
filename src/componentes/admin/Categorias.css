@@ -1,0 +1,89 @@
+/* Envoltura para aplicar margen según sidebar */
+.categorias-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 40px 20px;
+  margin-left: 250px; /* espacio para el sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+/* Contenedor principal */
+.categorias-container {
+  max-width: 800px;
+  width: 100%;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.categorias-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Formulario */
+.categorias-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.categorias-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Botones */
+.categorias-btn {
+  background-color: #113cca;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.categorias-btn-cancelar {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: -10px;
+}
+
+/* Tabla responsive si aplica */
+.categorias-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.categorias-table th,
+.categorias-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .categorias-wrapper {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .categorias-container {
+    padding: 20px;
+  }
+}

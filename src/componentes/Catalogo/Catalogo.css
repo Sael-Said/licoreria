@@ -1,0 +1,331 @@
+.catalogo-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.catalogo-header {
+  background-color: #1b5e20;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.titulo-header {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Contenido principal */
+.catalogo-container {
+  flex: 1; /* ocupa todo el espacio restante */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.catalogo-titulo {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+.categoria-bloque {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.categoria-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.categoria-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #388e3c;
+}
+
+/* Flechas de paginación */
+.flechas button {
+  font-size: 20px;
+  padding: 4px 10px;
+  margin-left: 5px;
+  border: none;
+  background-color: #a5d6a7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.flechas button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Grid de productos por categoría */
+.categoria-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+
+/* Tarjetas de productos */
+.producto-card {
+  width: 100%;
+  max-width: 200px;
+  min-width: 160px;
+  height: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.producto-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;  /* ✅ importante */
+  object-position: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+
+.producto-card h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  color: #1b5e20;
+}
+
+.producto-card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.producto-card strong {
+  font-size: 16px;
+  color: #388e3c;
+  margin-bottom: 10px;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: auto;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebc59;
+}
+
+/* Tarjeta vacía para completar el espacio */
+.producto-card.placeholder {
+  visibility: hidden;
+  width: 180px;
+  min-width: 180px;
+  height: 340px; /* misma altura que las reales */
+  flex-shrink: 0;
+}
+
+/* Footer */
+.catalogo-footer {
+  background-color: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: auto; /* ✅ hace que el footer empuje hacia abajo sin dejar espacio */
+}
+.footer-redes {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.footer-icon {
+  font-size: 20px;
+  color: white;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.footer-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Colores personalizados por red (opcional) */
+.footer-icon.facebook:hover {
+  color: #3b5998;
+}
+
+.footer-icon.instagram:hover {
+  color: #e1306c;
+}
+
+.footer-icon.tiktok:hover {
+  color: #000;
+}
+
+.header-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-derecha {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-proveedores,
+.btn-contacto {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para botón "Soy Proveedor" */
+.btn-proveedores {
+  background-color: #f8c200;
+  color: #1a1a1a;
+}
+
+.btn-proveedores:hover {
+  background-color: #ffde59;
+}
+
+/* Estilo para botón "Contáctanos" */
+.btn-contacto {
+  background-color: #25d366;
+  color: white;
+}
+
+.btn-contacto:hover {
+  background-color: #1ebe5d;
+}
+@media (max-width: 600px) {
+  .catalogo-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-derecha {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .btn-proveedores,
+  .btn-contacto {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .catalogo-container {
+    padding: 10px;
+  }
+
+  .categoria-bloque {
+    padding: 10px 0;
+  }
+
+  .categoria-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .categoria-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .producto-card {
+    width: 100%;
+    max-width: 180px;
+    min-width: unset;
+    margin: 0 auto;
+  }
+
+  .producto-card img {
+    height: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .producto-card {
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+  }
+
+  .producto-card img {
+    height: 120px;
+  }
+
+  .categoria-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categoria-header h3 {
+    font-size: 18px;
+  }
+
+  .whatsapp-btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+@media (max-width: 480px) {
+  .catalogo-container {
+    min-height: 70vh; /* o 60vh dependiendo del caso */
+  }
+}
+.catalogo-container:empty {
+  min-height: 80vh;
+}

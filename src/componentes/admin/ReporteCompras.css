@@ -1,0 +1,58 @@
+.reporte-compras-container {
+  padding: 20px;
+  background: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.reporte-filtros {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.reporte-filtros input[type="date"] {
+  padding: 5px;
+}
+
+.btn-imprimir {
+  background-color: #1c87c9;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-imprimir:hover {
+  background-color: #0b5fa5;
+}
+
+.reporte-scroll {
+  overflow-x: auto;
+}
+
+.tabla-reporte-compras {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 1000px;
+}
+
+.tabla-reporte-compras th,
+.tabla-reporte-compras td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.tabla-reporte-compras th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.mensaje-vacio {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}

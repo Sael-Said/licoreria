@@ -1,0 +1,124 @@
+/* 🧩 Wrapper para alinear el formulario correctamente */
+.formulario-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 40px 20px;
+  margin-left: 250px; /* espacio para el sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+/* ✅ Contenedor centrado y responsivo */
+.formulario-container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* Título */
+.formulario-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #000000;
+}
+
+/* Campos */
+.formulario-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formulario-container input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Botones */
+.formulario-container button {
+  padding: 12px;
+  background-color: #038b03;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.formulario-container button:hover {
+  background-color: #0a4405;
+}
+
+.formulario-container p {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Grupo producto */
+.grupo-producto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.grupo-producto label {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+.btn-eliminar {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: #c62828;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .formulario-wrapper {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .grupo-producto {
+    padding: 0.8rem;
+  }
+
+  .grupo-producto label {
+    font-size: 14px;
+  }
+
+  .formulario-container {
+    padding: 20px;
+  }
+
+  .formulario-container input,
+  .formulario-container button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
