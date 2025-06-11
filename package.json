@@ -24,7 +24,7 @@
     "xlsx": "^0.18.5"
   },
   "scripts": {
-    "prebuild": "export CI=''",
+    "prebuild": "set CI=",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
