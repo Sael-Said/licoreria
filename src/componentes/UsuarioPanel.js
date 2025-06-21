@@ -4,6 +4,7 @@ import { FaSignOutAlt } from "react-icons/fa";
 import RegistrarVenta from "./usuario/RegistrarVenta";
 import ReporteVentasUsuario from "./usuario/MisVentas";
 import VerStockProductos from './usuario/VerStock';
+import CambiarContrasena from "./usuario/CambiarContrasena";
 
 import "./UsuarioPanel.css";
 
@@ -42,6 +43,7 @@ const UsuarioPanel = ({ setAuth }) => {
             <li><Link to="/usuario/registrar-venta" onClick={toggleMenu}>Registrar Venta</Link></li>
             <li><Link to="/usuario/reportes" onClick={toggleMenu}>Mis Ventas</Link></li>
             <li><Link to="/usuario/stock" onClick={toggleMenu}>Stock de Productos</Link></li>
+            <li><Link to="/usuario/cambiar-contraseña" onClick={toggleMenu}>Cambiar Contraseña</Link></li>
             <li>
   <button onClick={handleLogout} className="logout-button">
     <FaSignOutAlt style={{ marginRight: "8px" }} />
@@ -58,6 +60,7 @@ const UsuarioPanel = ({ setAuth }) => {
           <Route path="registrar-venta" element={<RegistrarVenta />} />
           <Route path="reportes" element={<ReporteVentasUsuario />} />
           <Route path="stock" element={<VerStockProductos />} />
+          <Route path="cambiar-contraseña" element={<CambiarContrasena />} />
           <Route path="*" element={<RegistrarVenta />} />
         </Routes>
       </main>

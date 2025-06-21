@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./FormularioUsuarios.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const AgregarUsuario = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +11,9 @@ const AgregarUsuario = () => {
     telefono: "",
     direccion: "",
   });
+
   const [mensaje, setMensaje] = useState("");
+  const [mostrarContrasena, setMostrarContrasena] = useState(false); // 👁️
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,12 +25,16 @@ const AgregarUsuario = () => {
     const token = localStorage.getItem("token");
 
     try {
-      await axios.post("http://localhost:8000/api/usuario/", {
-        ...formData,
-        rol: "usuario",
-      }, {
-        headers: { Authorization: `Token ${token}` },
-      });
+      await axios.post(
+        "http://localhost:8000/api/usuario/",
+        {
+          ...formData,
+          rol: "usuario",
+        },
+        {
+          headers: { Authorization: `Token ${token}` },
+        }
+      );
 
       setMensaje("✅ Usuario registrado con éxito");
       setFormData({
@@ -50,7 +57,21 @@ const AgregarUsuario = () => {
         <form onSubmit={handleSubmit}>
           <input type="text" name="username" placeholder="Nombre de usuario" value={formData.username} onChange={handleChange} required />
           <input type="email" name="email" placeholder="Correo electrónico" value={formData.email} onChange={handleChange} required />
-          <input type="password" name="password" placeholder="Contraseña" value={formData.password} onChange={handleChange} required />
+          
+          <div className="input-con-ojito">
+            <input
+              type={mostrarContrasena ? "text" : "password"}
+              name="password"
+              placeholder="Contraseña"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <span onClick={() => setMostrarContrasena(!mostrarContrasena)}>
+              {mostrarContrasena ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
+
           <input type="text" name="telefono" placeholder="Teléfono" value={formData.telefono} onChange={handleChange} required />
           <input type="text" name="direccion" placeholder="Dirección" value={formData.direccion} onChange={handleChange} required />
           <button type="submit">Registrar</button>

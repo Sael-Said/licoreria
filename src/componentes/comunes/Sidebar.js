@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import {
-  FaBars, FaHome, FaBoxOpen, FaUser, FaShoppingCart,
+  FaBars, FaHome, FaBoxOpen, FaUser, FaShoppingCart, FaKey,
   FaFileAlt, FaTruck, FaSignOutAlt, FaMoneyBillWave
 } from "react-icons/fa";
 import SidebarContext from "./SidebarContext";
@@ -15,6 +15,8 @@ const Sidebar = ({ children, setAuth }) => {
   const [openReportes, setOpenReportes] = useState(false);
   const [openProveedores, setOpenProveedores] = useState(false);
   const [openCuentas, setOpenCuentas] = useState(false);
+  const [openCambiar, setOpenCambiar] = useState(false);
+
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [menuOpen, setMenuOpen] = useState(window.innerWidth > 768);
@@ -180,6 +182,27 @@ const Sidebar = ({ children, setAuth }) => {
                 </ul>
               )}
             </li>
+            {/* Cambiar Contraseña */}
+<li className="sidebar-item">
+  <div className="sidebar-link" onClick={() => setOpenCambiar(!openCambiar)}>
+    <FaKey className="sidebar-icon" />
+    {!isCollapsed && "Contraseña"}
+  </div>
+  {openCambiar && !isCollapsed && (
+    <ul className="sidebar-submenu">
+      <li>
+        <Link
+          to="/admin/cambiar-contraseña"
+          className="sidebar-sublink"
+          onClick={() => isMobile && setMenuOpen(false)}
+        >
+          Cambiar Contraseña
+        </Link>
+      </li>
+    </ul>
+  )}
+</li>
+
 
             {/* Logout */}
             <li className="sidebar-item logout-item">

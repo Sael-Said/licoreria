@@ -96,6 +96,23 @@
 .btn-eliminar:hover {
   background-color: #c62828;
 }
+.input-con-ojito {
+  position: relative;
+}
+
+.input-con-ojito input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.input-con-ojito span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+}
 
 /* Responsivo */
 @media (max-width: 768px) {

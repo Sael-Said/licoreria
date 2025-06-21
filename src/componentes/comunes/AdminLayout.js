@@ -20,6 +20,7 @@ import ReportesAdministradores from "../admin/ReportesAdministradores";
 import ReporteCompras from "../admin/ReporteCompras";
 import ReporteVentas from "../admin/ReporteVentas";
 import AgregarProducto from "../admin/AgregarProducto";
+import CambiarContrasenaAdmin from "../admin/CambiarContrasenaAdmin";
 
 
 import './AdminLayout.css';
@@ -55,6 +56,7 @@ const AdminLayout = ({ setAuth }) => { // 👈 aceptar setAuth como prop
             <Route path="administradores/reportes-compras" element={<ReporteCompras />} />
             <Route path="administradores/reportes-ventas" element={<ReporteVentas />} />
             <Route path="cuentas-por-pagar" element={<CuentasPorPagar />} />
+            <Route path="cambiar-contraseña" element={<CambiarContrasenaAdmin />} />
             <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
           </Routes>
         </div>

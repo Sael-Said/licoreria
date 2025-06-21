@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-
-// Importa la imagen
 import fondoLogin from "./img/fondo1.jpg";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = ({ setAuth }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [verPassword, setVerPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
@@ -18,34 +18,25 @@ const Login = ({ setAuth }) => {
     try {
       const response = await axios.post("http://localhost:8000/api/login/", {
         username,
-        password
+        password,
       });
 
       const { token, user_id, username: userName, rol } = response.data;
 
-const authData = {
-  token,
-  user_id,
-  username: userName,
-  rol,
-};
-
-// Guarda el token por separado para facilitar su acceso
-localStorage.setItem("token", token); // ✅ solución
-localStorage.setItem("authData", JSON.stringify(authData));
-localStorage.setItem("user_id", user_id); // 👈 esto es lo que usas en el resto del sistema
-localStorage.setItem("username", userName);
-localStorage.setItem("rol", rol);
-
-setAuth(authData);
-
-      
-      setAuth({
+      const authData = {
         token,
         user_id,
         username: userName,
         rol,
-      });
+      };
+
+      localStorage.setItem("token", token);
+      localStorage.setItem("authData", JSON.stringify(authData));
+      localStorage.setItem("user_id", user_id);
+      localStorage.setItem("username", userName);
+      localStorage.setItem("rol", rol);
+
+      setAuth(authData);
 
       if (rol === "administrador") {
         navigate("/admin");
@@ -53,15 +44,14 @@ setAuth(authData);
         navigate("/usuario");
       }
     } catch (error) {
-  if (error.response?.status === 403) {
-    setErrorMessage("🚫 Tu cuenta ha sido desactivada. Contacta al administrador.");
-  } else if (error.response?.status === 400) {
-    setErrorMessage("🚫 Datos Incorrectos");
-  } else {
-    setErrorMessage("⚠️ Error en el servidor.");
-  }
-}
-
+      if (error.response?.status === 403) {
+        setErrorMessage("🚫 Tu cuenta ha sido desactivada. Contacta al administrador.");
+      } else if (error.response?.status === 400) {
+        setErrorMessage("🚫 Datos Incorrectos");
+      } else {
+        setErrorMessage("⚠️ Error en el servidor.");
+      }
+    }
   };
 
   return (
@@ -78,7 +68,7 @@ setAuth(authData);
         <h2 className="login-title">Iniciar Sesión</h2>
         <form className="login-form" onSubmit={handleLogin}>
           <div className="login-form-group">
-            <label className="login-label">Username</label>
+            <label className="login-label">Nombre de Usuario</label>
             <input
               type="text"
               className="login-input"
@@ -87,15 +77,30 @@ setAuth(authData);
             />
           </div>
           <div className="login-form-group">
-            <label className="login-label">Password</label>
-            <input
-              type="password"
-              className="login-input"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <label className="login-label">Contraseña</label>
+            <div style={{ position: "relative" }}>
+              <input
+                type={verPassword ? "text" : "password"}
+                className="login-input"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <span
+                onClick={() => setVerPassword(!verPassword)}
+                style={{
+                  position: "absolute",
+                  right: "12px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  cursor: "pointer",
+                  color: "#555",
+                }}
+              >
+                {verPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
           </div>
-          <button className="login-button" type="submit">Login</button>
+          <button className="login-button" type="submit">Iniciar Sesión</button>
         </form>
         {errorMessage && <p className="login-error">{errorMessage}</p>}
       </div>

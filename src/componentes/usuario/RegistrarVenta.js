@@ -214,7 +214,7 @@ const RegistrarVenta = () => {
         </tbody>
       </table>
       <div className="venta-total">
-        <p>Total: {total.toFixed(2)} Bs</p>
+        <p><strong>Total: </strong>{total.toFixed(2)} Bs</p>
         <label>Pago del cliente: </label>
         <input
           type="number"
@@ -222,7 +222,7 @@ const RegistrarVenta = () => {
           value={pagoCliente}
           onChange={(e) => setPagoCliente(e.target.value)}
         />
-        <p>Cambio: {cambio} Bs</p>
+        <p><strong>Cambio: </strong>{cambio} Bs</p>
         <label>Método de Pago: </label>
         <select value={metodoPago} onChange={(e) => setMetodoPago(e.target.value)}>
           <option value="efectivo">Efectivo</option>

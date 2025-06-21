@@ -60,21 +60,43 @@ const Productos = () => {
   };
 
   const fetchProductos = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:8000/api/producto/", {
-        headers: { Authorization: `Token ${token}` },
-      });
-      setProductos(response.data);
-      const productosBajoStock = response.data.filter(p => p.stock < 10);
-      if (productosBajoStock.length > 0) {
-        const mensajeAlerta = productosBajoStock.map(p => `${p.nombre_producto}: ${p.stock} unidades`).join('\n');
-        alert(`⚠️ Productos con bajo stock:\n${mensajeAlerta}`);
-      }
-    } catch (error) {
-      console.error("Error al cargar productos:", error);
+  try {
+    const token = localStorage.getItem("token");
+    const response = await axios.get("http://localhost:8000/api/producto/", {
+      headers: { Authorization: `Token ${token}` },
+    });
+    const productos = response.data;
+    setProductos(productos);
+
+    // ⚠️ Alerta: productos con bajo stock
+    const productosBajoStock = productos.filter(p => p.stock < 10);
+    if (productosBajoStock.length > 0) {
+      const mensajeAlerta = productosBajoStock.map(p => `${p.nombre_producto}: ${p.stock} unidades`).join('\n');
+      alert(`⚠️ Productos con bajo stock:\n${mensajeAlerta}`);
     }
-  };
+
+    // ⏳ Alerta: productos por vencer (dentro de 7 días)
+    const hoy = new Date();
+    const en7Dias = new Date();
+    en7Dias.setDate(hoy.getDate() + 7);
+
+    const productosPorVencer = productos.filter(p => {
+      if (!p.fecha_vencimiento) return false;
+      const fechaVencimiento = new Date(p.fecha_vencimiento);
+      return fechaVencimiento >= hoy && fechaVencimiento <= en7Dias;
+    });
+
+    if (productosPorVencer.length > 0) {
+      const mensajeVencimiento = productosPorVencer.map(p =>
+        `${p.nombre_producto} vence el ${p.fecha_vencimiento}`
+      ).join('\n');
+      alert(`⏳ Productos próximos a vencer:\n${mensajeVencimiento}`);
+    }
+
+  } catch (error) {
+    console.error("Error al cargar productos:", error);
+  }
+};
 
   const fetchCategorias = async () => {
     try {
