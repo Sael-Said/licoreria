@@ -21,7 +21,7 @@ const RegistrarVenta = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    axios.get("http://localhost:8000/api/producto/", {
+    axios.get("https://backend-licoreria-o6e2.onrender.com/api/producto/", {
       headers: { Authorization: `Token ${token}` },
     }).then(res => setProductos(res.data));
   }, []);
@@ -71,7 +71,7 @@ const RegistrarVenta = () => {
 
     if (cliente.nombre || cliente.ci || cliente.direccion || cliente.telefono || cliente.email) {
       try {
-        const clienteRes = await axios.post("http://localhost:8000/api/cliente/", {
+        const clienteRes = await axios.post("https://backend-licoreria-o6e2.onrender.com/api/cliente/", {
           nombre: cliente.nombre,
           ci_nit: cliente.ci,
           direccion: cliente.direccion,
@@ -90,7 +90,7 @@ const RegistrarVenta = () => {
     }
 
     try {
-      const ventaRes = await axios.post("http://localhost:8000/api/venta/", {
+      const ventaRes = await axios.post("https://backend-licoreria-o6e2.onrender.com/api/venta/", {
         total,
         cliente: clienteId || null,
         tipo_pago: metodoPago,
@@ -102,7 +102,7 @@ const RegistrarVenta = () => {
       setFechaVenta(ventaRes.data.fecha);
 
       for (const item of carrito) {
-        await axios.post("http://localhost:8000/api/detalleventa/", {
+        await axios.post("https://backend-licoreria-o6e2.onrender.com/api/detalleventa/", {
           venta: nuevaVentaId,
           producto: item.id,
           cantidad: item.cantidad,

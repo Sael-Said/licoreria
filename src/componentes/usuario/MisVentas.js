@@ -19,10 +19,10 @@ const MisVentas = () => {
       const user_id = localStorage.getItem("user_id");
       try {
         const [ventasRes, detallesRes] = await Promise.all([
-          axios.get(`http://localhost:8000/api/venta/?usuario=${user_id}`, {
+          axios.get(`https://backend-licoreria-o6e2.onrender.com/api/venta/?usuario=${user_id}`, {
             headers: { Authorization: `Token ${token}` },
           }),
-          axios.get(`http://localhost:8000/api/detalleventa/`, {
+          axios.get(`https://backend-licoreria-o6e2.onrender.com/api/detalleventa/`, {
             headers: { Authorization: `Token ${token}` },
           }),
         ]);

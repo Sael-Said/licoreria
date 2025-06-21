@@ -26,7 +26,7 @@ const AgregarAdministrador = () => {
     const token = localStorage.getItem("token");
 
     try {
-      await axios.post("http://localhost:8000/api/usuario/", formData, {
+      await axios.post("https://backend-licoreria-o6e2.onrender.com/api/usuario/", formData, {
         headers: { Authorization: `Token ${token}` },
       });
 

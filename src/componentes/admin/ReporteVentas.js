@@ -18,10 +18,10 @@ const ReporteVentas = () => {
     const token = localStorage.getItem("token");
 
     Promise.all([
-      axios.get("http://localhost:8000/api/usuario/", { headers: { Authorization: `Token ${token}` } }),
-      axios.get("http://localhost:8000/api/cliente/", { headers: { Authorization: `Token ${token}` } }),
-      axios.get("http://localhost:8000/api/venta/", { headers: { Authorization: `Token ${token}` } }),
-      axios.get("http://localhost:8000/api/detalleventa/", { headers: { Authorization: `Token ${token}` } })
+      axios.get("https://backend-licoreria-o6e2.onrender.com/api/usuario/", { headers: { Authorization: `Token ${token}` } }),
+      axios.get("https://backend-licoreria-o6e2.onrender.com/api/cliente/", { headers: { Authorization: `Token ${token}` } }),
+      axios.get("https://backend-licoreria-o6e2.onrender.com/api/venta/", { headers: { Authorization: `Token ${token}` } }),
+      axios.get("https://backend-licoreria-o6e2.onrender.com/api/detalleventa/", { headers: { Authorization: `Token ${token}` } })
     ]).then(([usuariosRes, clientesRes, ventasRes, detallesRes]) => {
       setUsuarios(usuariosRes.data);
       setClientes(clientesRes.data);

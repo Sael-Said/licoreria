@@ -26,7 +26,7 @@ const AgregarUsuario = () => {
 
     try {
       await axios.post(
-        "http://localhost:8000/api/usuario/",
+        "https://backend-licoreria-o6e2.onrender.com/api/usuario/",
         {
           ...formData,
           rol: "usuario",

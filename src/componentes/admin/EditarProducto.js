@@ -29,7 +29,7 @@ const EditarProducto = ({ producto, onClose, onProductoActualizado }) => {
     const fetchCategorias = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:8000/api/categoria/", {
+        const response = await axios.get("https://backend-licoreria-o6e2.onrender.com/api/categoria/", {
           headers: { Authorization: `Token ${token}` },
         });
         setCategorias(response.data);
@@ -67,7 +67,7 @@ const EditarProducto = ({ producto, onClose, onProductoActualizado }) => {
     });
 
     try {
-      await axios.put(`http://localhost:8000/api/producto/${producto.id}/`, data, {
+      await axios.put(`https://backend-licoreria-o6e2.onrender.com/api/producto/${producto.id}/`, data, {
         headers: {
           Authorization: `Token ${token}`,
           "Content-Type": "multipart/form-data",

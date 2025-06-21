@@ -24,7 +24,7 @@ const CambiarContrasena = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:8000/auth/users/set_password/",
+        "https://backend-licoreria-o6e2.onrender.com/auth/users/set_password/",
         {
           current_password: actual,
           new_password: nueva,

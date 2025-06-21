@@ -13,14 +13,14 @@ const ListaCompras = () => {
     const token = localStorage.getItem("token");
     const userId = localStorage.getItem("user_id");
 
-    axios.get("http://localhost:8000/api/compra/", {
+    axios.get("https://backend-licoreria-o6e2.onrender.com/api/compra/", {
       headers: { Authorization: `Token ${token}` },
     }).then(res => {
       const comprasFiltradas = res.data.filter(c => String(c.usuario) === userId);
       setCompras(comprasFiltradas);
     });
 
-    axios.get("http://localhost:8000/api/detallecompra/", {
+    axios.get("https://backend-licoreria-o6e2.onrender.com/api/detallecompra/", {
       headers: { Authorization: `Token ${token}` },
     }).then(res => setDetalles(res.data));
   }, []);

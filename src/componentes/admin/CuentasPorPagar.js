@@ -15,10 +15,10 @@ const CuentasPorPagar = () => {
   const fetchData = async () => {
     try {
       const [comprasRes, proveedoresRes] = await Promise.all([
-        axios.get("http://localhost:8000/api/compra/", {
+        axios.get("https://backend-licoreria-o6e2.onrender.com/api/compra/", {
           headers: { Authorization: `Token ${token}` },
         }),
-        axios.get("http://localhost:8000/api/proveedor/", {
+        axios.get("https://backend-licoreria-o6e2.onrender.com/api/proveedor/", {
           headers: { Authorization: `Token ${token}` },
         }),
       ]);
@@ -57,7 +57,7 @@ const actualizarDatos = async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const comprasRes = await axios.get("http://localhost:8000/api/compra/", {
+    const comprasRes = await axios.get("https://backend-licoreria-o6e2.onrender.com/api/compra/", {
       headers: { Authorization: `Token ${token}` },
     });
 

@@ -19,7 +19,7 @@ const AgregarProveedor = () => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     try {
-      await axios.post("http://localhost:8000/api/proveedor/", formData, {
+      await axios.post("https://backend-licoreria-o6e2.onrender.com/api/proveedor/", formData, {
         headers: {
           Authorization: `Token ${token}`,
         },

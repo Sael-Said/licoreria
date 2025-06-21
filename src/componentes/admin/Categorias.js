@@ -19,7 +19,7 @@ const Categorias = () => {
   const fetchCategorias = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:8000/api/categoria/", {
+      const response = await axios.get("https://backend-licoreria-o6e2.onrender.com/api/categoria/", {
         headers: { Authorization: `Token ${token}` },
       });
       setCategorias(response.data);
@@ -39,11 +39,11 @@ const Categorias = () => {
 
     try {
       if (editingCategoriaId) {
-        await axios.put(`http://localhost:8000/api/categoria/${editingCategoriaId}/`, datos, {
+        await axios.put(`https://backend-licoreria-o6e2.onrender.com/api/categoria/${editingCategoriaId}/`, datos, {
           headers: { Authorization: `Token ${token}` },
         });
       } else {
-        await axios.post("http://localhost:8000/api/categoria/", datos, {
+        await axios.post("https://backend-licoreria-o6e2.onrender.com/api/categoria/", datos, {
           headers: { Authorization: `Token ${token}` },
         });
       }
@@ -66,7 +66,7 @@ const Categorias = () => {
 
     const token = localStorage.getItem("token");
     try {
-      await axios.delete(`http://localhost:8000/api/categoria/${id}/`, {
+      await axios.delete(`https://backend-licoreria-o6e2.onrender.com/api/categoria/${id}/`, {
         headers: { Authorization: `Token ${token}` },
       });
       fetchCategorias();

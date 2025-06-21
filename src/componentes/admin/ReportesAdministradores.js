@@ -12,14 +12,14 @@ const ReportesAdministradores = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    axios.get("http://localhost:8000/api/usuario/", {
+    axios.get("https://backend-licoreria-o6e2.onrender.com/api/usuario/", {
       headers: { Authorization: `Token ${token}` },
     }).then(res => {
       const admins = res.data.filter(user => user.rol === "administrador");
       setAdministradores(admins);
     });
 
-    axios.get("http://localhost:8000/api/compra/", {
+    axios.get("https://backend-licoreria-o6e2.onrender.com/api/compra/", {
       headers: { Authorization: `Token ${token}` },
     }).then(res => setCompras(res.data));
   }, []);

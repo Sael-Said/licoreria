@@ -9,7 +9,7 @@ const ListaProveedores = () => {
     const obtenerProveedores = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("http://localhost:8000/api/proveedor/", {
+        const response = await axios.get("https://backend-licoreria-o6e2.onrender.com/api/proveedor/", {
           headers: { Authorization: `Token ${token}` },
         });
         setProveedores(response.data);

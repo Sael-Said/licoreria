@@ -62,7 +62,7 @@ const Productos = () => {
   const fetchProductos = async () => {
   try {
     const token = localStorage.getItem("token");
-    const response = await axios.get("http://localhost:8000/api/producto/", {
+    const response = await axios.get("https://backend-licoreria-o6e2.onrender.com/api/producto/", {
       headers: { Authorization: `Token ${token}` },
     });
     const productos = response.data;
@@ -101,7 +101,7 @@ const Productos = () => {
   const fetchCategorias = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:8000/api/categoria/", {
+      const response = await axios.get("https://backend-licoreria-o6e2.onrender.com/api/categoria/", {
         headers: { Authorization: `Token ${token}` },
       });
       setCategorias(response.data);
@@ -124,7 +124,7 @@ const Productos = () => {
 
     const token = localStorage.getItem("token");
     try {
-      await axios.patch(`http://localhost:8000/api/producto/${id}/`, {
+      await axios.patch(`https://backend-licoreria-o6e2.onrender.com/api/producto/${id}/`, {
         activo: false
       }, {
         headers: { Authorization: `Token ${token}` },
@@ -141,7 +141,7 @@ const Productos = () => {
 
     const token = localStorage.getItem("token");
     try {
-      await axios.patch(`http://localhost:8000/api/producto/${id}/`, {
+      await axios.patch(`https://backend-licoreria-o6e2.onrender.com/api/producto/${id}/`, {
         activo: true
       }, {
         headers: { Authorization: `Token ${token}` },

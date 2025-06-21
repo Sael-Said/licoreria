@@ -9,7 +9,7 @@ const ListaAdministradores = () => {
     const fetchAdmins = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("http://localhost:8000/api/usuario/", {
+        const response = await axios.get("https://backend-licoreria-o6e2.onrender.com/api/usuario/", {
           headers: { Authorization: `Token ${token}` },
         });
         const admins = response.data.filter(user => user.rol === "administrador");

@@ -22,13 +22,13 @@ const ReporteCompras = () => {
     const fetchDatos = async () => {
       try {
         const [usuariosRes, comprasRes, detallesRes] = await Promise.all([
-          axios.get("http://localhost:8000/api/usuario/", {
+          axios.get("https://backend-licoreria-o6e2.onrender.com/api/usuario/", {
             headers: { Authorization: `Token ${token}` },
           }),
-          axios.get("http://localhost:8000/api/compra/", {
+          axios.get("https://backend-licoreria-o6e2.onrender.com/api/compra/", {
             headers: { Authorization: `Token ${token}` },
           }),
-          axios.get("http://localhost:8000/api/detallecompra/", {
+          axios.get("https://backend-licoreria-o6e2.onrender.com/api/detallecompra/", {
             headers: { Authorization: `Token ${token}` },
           }),
         ]);

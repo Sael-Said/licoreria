@@ -25,7 +25,7 @@ const Dashboard = () => {
 
     const fetchTotales = async () => {
       try {
-        const ventasRes = await axios.get("http://localhost:8000/api/venta/", {
+        const ventasRes = await axios.get("https://backend-licoreria-o6e2.onrender.com/api/venta/", {
           headers: { Authorization: `Token ${token}` },
         });
 
@@ -60,7 +60,7 @@ const Dashboard = () => {
 
     const fetchProductoMasVendido = async () => {
       try {
-        const detallesRes = await axios.get("http://localhost:8000/api/detalleventa/", {
+        const detallesRes = await axios.get("https://backend-licoreria-o6e2.onrender.com/api/detalleventa/", {
           headers: { Authorization: `Token ${token}` },
         });
 
@@ -80,7 +80,7 @@ const Dashboard = () => {
         }
 
         if (maxId) {
-          const prodRes = await axios.get(`http://localhost:8000/api/producto/${maxId}/`, {
+          const prodRes = await axios.get(`https://backend-licoreria-o6e2.onrender.com/api/producto/${maxId}/`, {
             headers: { Authorization: `Token ${token}` },
           });
           setProductoMasVendido({
@@ -95,7 +95,7 @@ const Dashboard = () => {
 
     const fetchStockBajo = async () => {
       try {
-        const productosRes = await axios.get("http://localhost:8000/api/producto/", {
+        const productosRes = await axios.get("https://backend-licoreria-o6e2.onrender.com/api/producto/", {
           headers: { Authorization: `Token ${token}` },
         });
         const bajos = productosRes.data.filter((p) => p.stock <= p.stock_minimo);

@@ -10,7 +10,7 @@ const ProductoCard = ({ producto }) => {
 
   return (
     <div className="producto-card">
-  <img src={`http://localhost:8000${producto.imagen}`} alt={producto.nombre_producto} />
+  <img src={`https://backend-licoreria-o6e2.onrender.com${producto.imagen}`} alt={producto.nombre_producto} />
   <h3>{producto.nombre_producto}</h3>
   <p>{producto.descripcion}</p>
   <strong>{producto.precio_venta} Bs</strong>

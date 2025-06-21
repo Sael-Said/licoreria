@@ -15,7 +15,7 @@ const AbonarPagoModal = ({ compra, onClose, onSuccess }) => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await axios.post("http://localhost:8000/api/pagocompra/", {
+      const res = await axios.post("https://backend-licoreria-o6e2.onrender.com/api/pagocompra/", {
         compra: compra.id,
         monto_pagado: parseFloat(monto),
         metodo_pago: metodoPago,

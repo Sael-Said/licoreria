@@ -15,11 +15,11 @@ const RegistrarCompras = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    axios.get("http://localhost:8000/api/proveedor/", {
+    axios.get("https://backend-licoreria-o6e2.onrender.com/api/proveedor/", {
       headers: { Authorization: `Token ${token}` },
     }).then(res => setProveedores(res.data));
 
-    axios.get("http://localhost:8000/api/producto/", {
+    axios.get("https://backend-licoreria-o6e2.onrender.com/api/producto/", {
       headers: { Authorization: `Token ${token}` },
     }).then(res => setProductos(res.data));
   }, []);
@@ -79,7 +79,7 @@ const handleQuitarProducto = (index) => {
     };
 
     try {
-      const compraRes = await axios.post("http://localhost:8000/api/compra/", compraData, {
+      const compraRes = await axios.post("https://backend-licoreria-o6e2.onrender.com/api/compra/", compraData, {
         headers: { Authorization: `Token ${token}` },
       });
 
@@ -87,7 +87,7 @@ const handleQuitarProducto = (index) => {
 
       // Guardar detalles
       for (const detalle of detalleCompra) {
-        await axios.post("http://localhost:8000/api/detallecompra/", {
+        await axios.post("https://backend-licoreria-o6e2.onrender.com/api/detallecompra/", {
           compra: idCompra,
           producto: detalle.producto,
           cantidad: detalle.cantidad,
@@ -100,7 +100,7 @@ const handleQuitarProducto = (index) => {
 
       // Guardar abono si aplica
       if (tipoPago === "credito" && parseFloat(abono) > 0) {
-        await axios.post("http://localhost:8000/api/pagocompra/", {
+        await axios.post("https://backend-licoreria-o6e2.onrender.com/api/pagocompra/", {
           compra: idCompra,
           monto_pagado: parseFloat(abono),
           metodo_pago: "efectivo", // o podrías dejar que elija

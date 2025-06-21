@@ -9,7 +9,7 @@ const ListaUsuarios = () => {
     const fetchUsuarios = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("http://localhost:8000/api/usuario/", {
+        const response = await axios.get("https://backend-licoreria-o6e2.onrender.com/api/usuario/", {
           headers: { Authorization: `Token ${token}` },
         });
         const soloUsuarios = response.data.filter(user => user.rol === "usuario");
@@ -25,7 +25,7 @@ const ListaUsuarios = () => {
   const handleToggleBloqueo = async (id, isActive) => {
     const token = localStorage.getItem("token");
     try {
-      await axios.patch(`http://localhost:8000/api/usuario/${id}/`, {
+      await axios.patch(`https://backend-licoreria-o6e2.onrender.com/api/usuario/${id}/`, {
         is_active: !isActive
       }, {
         headers: { Authorization: `Token ${token}` }

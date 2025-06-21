@@ -10,11 +10,11 @@ const Catalogo = () => {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/api/catalogo/")
+    axios.get("https://backend-licoreria-o6e2.onrender.com/api/catalogo/")
       .then(res => setProductos(res.data))
       .catch(err => console.error("Error al cargar productos:", err));
 
-    axios.get("http://localhost:8000/api/categoria/")
+    axios.get("https://backend-licoreria-o6e2.onrender.com/api/categoria/")
       .then(res => setCategorias(res.data))
       .catch(err => console.error("Error al cargar categorías:", err));
   }, []);

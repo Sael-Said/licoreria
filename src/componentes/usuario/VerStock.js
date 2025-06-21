@@ -9,7 +9,7 @@ const VerStock = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/api/producto/", {
+      .get("https://backend-licoreria-o6e2.onrender.com/api/producto/", {
         headers: { Authorization: `Token ${token}` },
       })
       .then((res) => setProductos(res.data))
